@@ -1,19 +1,44 @@
+import React, { useState, useEffect } from 'react';
 import TopicCard from '../topiccard/TopicCard';
 import sheet from '../../450DSAFinal.js';
 
 const Topic = () => {
-  // Transform the data structure to match our needs
-  const dsaTopics = sheet.reduce((acc, topic) => {
-    const topicName = topic.topicName;
-    if (!acc[topicName]) {
+  const [topics, setTopics] = useState({});
+
+  // Initialize topics with data from sheet and localStorage
+  useEffect(() => {
+    const initialTopics = sheet.reduce((acc, topic) => {
+      const topicName = topic.topicName;
+      const saved = localStorage.getItem(`solved-${topicName}`);
+      const solvedQuestions = saved ? JSON.parse(saved) : [];
+      
       acc[topicName] = {
         name: topicName,
         totalProblems: topic.questions.length,
-        solvedProblems: topic.questions.filter(q => q.Done).length
+        solvedProblems: solvedQuestions.length
       };
-    }
-    return acc;
-  }, {});
+      return acc;
+    }, {});
+    setTopics(initialTopics);
+  }, []);
+
+  // Listen for question progress updates
+  useEffect(() => {
+    const handleQuestionProgress = (event) => {
+      const { topicName, solvedCount, totalQuestions } = event.detail;
+      setTopics(prevTopics => ({
+        ...prevTopics,
+        [topicName]: {
+          ...prevTopics[topicName],
+          solvedProblems: solvedCount,
+          totalProblems: totalQuestions
+        }
+      }));
+    };
+
+    window.addEventListener('questionProgress', handleQuestionProgress);
+    return () => window.removeEventListener('questionProgress', handleQuestionProgress);
+  }, []);
 
   return (
     <div className="container section">
@@ -21,7 +46,7 @@ const Topic = () => {
       <p className="section__subtitle">Your DSA Learning Journey Starts Here</p>
       
       <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
-        {Object.values(dsaTopics).map((topic) => (
+        {Object.values(topics).map((topic) => (
           <TopicCard
             key={topic.name}
             topic={topic.name}
