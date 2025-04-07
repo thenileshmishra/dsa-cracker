@@ -9,11 +9,20 @@
   /*Color mode HSL(hue, saturation, lightness)*/
   --hue: 0;
   --sat: 0%;
+  
+  /* Light mode colors */
   --title-color: hsl(var(--hue), var(--sat), 20%);
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
+
+  /* Dark mode colors */
+  --title-color-dark-mode: hsl(var(--hue), var(--sat), 95%);
+  --title-color-dark-dark-mode: hsl(var(--hue), var(--sat), 100%);
+  --text-color-dark-mode: hsl(var(--hue), var(--sat), 75%);
+  --body-color-dark-mode: hsl(var(--hue), var(--sat), 8%);
+  --container-color-dark-mode: #1a1a1a;
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -50,17 +59,24 @@
   --z-modal: 1000;
 }
 
-/* Responsive typography */
-@media screen and (max-width: 992px) {
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
   :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
+    --title-color: var(--title-color-dark-mode);
+    --title-color-dark: var(--title-color-dark-dark-mode);
+    --text-color: var(--text-color-dark-mode);
+    --body-color: var(--body-color-dark-mode);
+    --container-color: var(--container-color-dark-mode);
   }
+}
+
+/* Manual dark mode class for JavaScript toggling */
+.dark-mode {
+  --title-color: var(--title-color-dark-mode);
+  --title-color-dark: var(--title-color-dark-dark-mode);
+  --text-color: var(--text-color-dark-mode);
+  --body-color: var(--body-color-dark-mode);
+  --container-color: var(--container-color-dark-mode);
 }
 
 /*=============== BASE ===============*/
@@ -85,6 +101,7 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1,
@@ -154,6 +171,7 @@ img {
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .button:hover {
