@@ -42,7 +42,7 @@ const Topic = () => {
 
   return (
     <div className="container section">
-      <h1 className="section__title">DSA Creacker</h1>
+      <h1 className="section__title">DSA Cracker</h1>
       <p className="section__subtitle">Your DSA Learning Journey Starts Here</p>
       
       <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>

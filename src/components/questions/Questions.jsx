@@ -79,50 +79,50 @@ const Questions = () => {
         </span>
       </div>
 
-      <div className="questions__list">
+      <div className="questions__table">
+        <div className="questions__table-header">
+          <div className="questions__table-cell number">No.</div>
+          <div className="questions__table-cell problem">Problem</div>
+          <div className="questions__table-cell links">Links</div>
+        </div>
         {filteredQuestions.map((question, index) => (
-          <div key={index} className="question__card">
-            <div className="question__content">
-              <div className="question__checkbox">
-                <input
-                  type="checkbox"
-                  id={`question-${index}`}
-                  checked={solvedQuestions.includes(index)}
-                  onChange={() => toggleSolved(index)}
-                />
-                <label htmlFor={`question-${index}`}></label>
-              </div>
-              
-              <div className="question__info">
-                <div className="question__title-row">
-                  <h3 className="question__title">{question.Problem}</h3>
-                  <div className="question__links">
-                    {question.URL && (
-                      <a 
-                        href={question.URL} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="question__link"
-                      >
-                        {question.URL.includes('geeksforgeeks') ? 'Geeks' :
-                         question.URL.includes('leetcode') ? 'Leet' :
-                         question.URL.includes('codingninjas') ? 'CN' : 'Link'}
-                      </a>
-                    )}
-                    {question.URL2 && (
-                      <a 
-                        href={question.URL2} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="question__link"
-                      >
-                        {question.URL2.includes('geeksforgeeks') ? 'Geeks' :
-                         question.URL2.includes('leetcode') ? 'Leet' :
-                         question.URL2.includes('codingninjas') ? 'CN' : 'Link'}
-                      </a>
-                    )}
-                  </div>
-                </div>
+          <div 
+            key={index} 
+            className={`questions__table-row ${solvedQuestions.includes(index) ? 'solved' : ''}`}
+            onClick={() => toggleSolved(index)}
+          >
+            <div className="questions__table-cell number">{index + 1}</div>
+            <div className="questions__table-cell problem">
+              {question.Problem}
+            </div>
+            <div className="questions__table-cell links">
+              <div className="question__links">
+                {question.URL && (
+                  <a 
+                    href={question.URL} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="question__link"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {question.URL.includes('geeksforgeeks') ? 'Geeks' :
+                     question.URL.includes('leetcode') ? 'Leet' :
+                     question.URL.includes('codingninjas') ? 'CN' : 'Link'}
+                  </a>
+                )}
+                {question.URL2 && (
+                  <a 
+                    href={question.URL2} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="question__link"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {question.URL2.includes('geeksforgeeks') ? 'Geeks' :
+                     question.URL2.includes('leetcode') ? 'Leet' :
+                     question.URL2.includes('codingninjas') ? 'CN' : 'Link'}
+                  </a>
+                )}
               </div>
             </div>
           </div>
