@@ -16,6 +16,7 @@
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
+  --text-color-light: hsl(var(--hue), var(--sat), 80%);
 
   /* Dark mode colors */
   --title-color-dark-mode: hsl(var(--hue), var(--sat), 95%);
@@ -23,6 +24,7 @@
   --text-color-dark-mode: hsl(var(--hue), var(--sat), 75%);
   --body-color-dark-mode: hsl(var(--hue), var(--sat), 8%);
   --container-color-dark-mode: #1a1a1a;
+  --text-color-light-dark-mode: hsl(var(--hue), var(--sat), 20%);
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -60,23 +62,13 @@
 }
 
 /* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --title-color: var(--title-color-dark-mode);
-    --title-color-dark: var(--title-color-dark-dark-mode);
-    --text-color: var(--text-color-dark-mode);
-    --body-color: var(--body-color-dark-mode);
-    --container-color: var(--container-color-dark-mode);
-  }
-}
-
-/* Manual dark mode class for JavaScript toggling */
 .dark-mode {
   --title-color: var(--title-color-dark-mode);
   --title-color-dark: var(--title-color-dark-dark-mode);
   --text-color: var(--text-color-dark-mode);
   --body-color: var(--body-color-dark-mode);
   --container-color: var(--container-color-dark-mode);
+  --text-color-light: var(--text-color-light-dark-mode);
 }
 
 /*=============== BASE ===============*/
@@ -171,7 +163,7 @@ img {
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s;
 }
 
 .button:hover {
