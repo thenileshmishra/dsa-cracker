@@ -1,0 +1,20 @@
+.App {
+  min-height: 100vh;
+  background: var(--body-color);
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  padding-top: 5rem; /* Account for fixed navbar */
+  min-height: 100vh;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background: var(--body-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-mode .App {
+  background: var(--body-color-dark);
+} 

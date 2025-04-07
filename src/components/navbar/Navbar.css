@@ -1,0 +1,60 @@
+.navbar {
+  width: 100%;
+  background: var(--container-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__container {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav__logo:hover {
+  color: var(--first-color);
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__darkmode {
+  background: none;
+  border: none;
+  color: var(--title-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav__darkmode:hover {
+  color: var(--first-color);
+  background: var(--body-color);
+}
+
+/* Dark mode styles */
+.dark-mode .navbar {
+  background: var(--container-color-dark);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .nav__darkmode:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
