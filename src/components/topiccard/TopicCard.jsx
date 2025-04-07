@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './TopicCard.css';
 
 const TopicCard = ({ topic, totalProblems, solvedProblems }) => {
@@ -6,7 +7,7 @@ const TopicCard = ({ topic, totalProblems, solvedProblems }) => {
   const progress = (solvedProblems / totalProblems) * 100;
 
   return (
-    <div className="topic-card">
+    <Link to={`/questions/${topic}`} className="topic-card">
       <h3 className="topic-card__title">{topic}</h3>
       
       <div className="topic-card__stats">
@@ -27,7 +28,7 @@ const TopicCard = ({ topic, totalProblems, solvedProblems }) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
