@@ -1,0 +1,29 @@
+.topic-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topic-title {
+  color: var(--title-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .topic-container {
+    padding: 1rem;
+  }
+  
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+}

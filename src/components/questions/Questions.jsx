@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import sheet from '../../sheets/Arsh.js';
 import './Questions.css';
 
-const Questions = () => {
+const Questions = ({ selectedSheet }) => {
   const { topicName } = useParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [questions, setQuestions] = useState([]);
@@ -12,14 +11,59 @@ const Questions = () => {
     return saved ? JSON.parse(saved) : [];
   });
 
+  // Find the topic in the sheet
   useEffect(() => {
-    // Find the topic in the sheet
-    const topic = sheet.find(t => t.topicName === topicName);
-    if (topic) {
-      setQuestions(topic.questions);
-    }
-  }, [topicName]);
-
+    // Load sheet data based on selectedSheet
+    const loadSheetData = async () => {
+      try {
+        let sheetData;
+        switch (selectedSheet) {
+          case 'sheet3':
+            const dsaFinal = await import('../../sheets/450DSAFinal');
+            sheetData = dsaFinal.default;
+            break;
+          case 'sheet1':
+            const arsh = await import('../../sheets/Arsh');
+            sheetData = arsh.default;
+            break;
+          case 'sheet2':
+            const fraz = await import('../../sheets/Fraz');
+            sheetData = fraz.default;
+            break;
+          default:
+            const defaultSheet = await import('../../sheets/450DSAFinal');
+            sheetData = defaultSheet.default;
+        }
+        
+        // Ensure sheetData is an array and find the topic
+        if (Array.isArray(sheetData)) {
+          // More flexible topic matching
+          const topic = sheetData.find(t => {
+            const normalizedTopicName = t.topicName.toLowerCase().replace(/\s+/g, '');
+            const normalizedParam = topicName.toLowerCase().replace(/\s+/g, '');
+            return normalizedTopicName.includes(normalizedParam) || 
+                   normalizedParam.includes(normalizedTopicName);
+          });
+          
+          if (topic && Array.isArray(topic.questions)) {
+            setQuestions(topic.questions);
+          } else {
+            console.warn('Topic not found or questions array is invalid:', topicName);
+            setQuestions([]);
+          }
+        } else {
+          console.error('Sheet data is not an array:', sheetData);
+          setQuestions([]);
+        }
+      } catch (error) {
+        console.error('Error loading sheet data:', error);
+        setQuestions([]);
+      }
+    };
+    
+    loadSheetData();
+  }, [topicName, selectedSheet]);
+    
   useEffect(() => {
     // Save solved questions to localStorage
     localStorage.setItem(`solved-${topicName}`, JSON.stringify(solvedQuestions));

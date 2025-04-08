@@ -1,6 +1,6 @@
 export default [
 	{
-		topicName: 'Array',
+		topicName: 'Array LB',
 		position: 0,
 		started: false,
 		doneQuestions: 0,

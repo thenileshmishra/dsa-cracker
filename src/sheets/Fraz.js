@@ -1,10 +1,10 @@
 export default [
     {
-      "topicName": "Array",
-      "position": 0,
-      "started": false,
-      "doneQuestions": 0,
-      "questions": [
+      topicName: "Array Fraz",
+      position: 0,
+      started: false,
+      doneQuestions: 0,
+      questions: [
         {
           "Problem": "Two Sum",
           "Done": false,
@@ -349,10 +349,11 @@ export default [
           "Difficulty": "Hard",
           "URL": "https://leetcode.com/problems/max-value-of-equation/"
         }
-      ],
+      ]},
+      {
 
           "topicName": "Recurssion",
-            "position": 0,
+          "position": 0,
           "started": false,
           "doneQuestions": 0,
           "questions": [
@@ -492,191 +493,192 @@ export default [
               "Difficulty": "Easy",
               "URL": "https://leetcode.com/problems/n-queens/"
             }
-      ],
-    "topicName": "STRINGS",
-    "position": 0,
-    "started": false,
-    "doneQuestions": 0,
-    "questions": [
+      ]},
       {
-        "Problem": "Add Strings",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Easy",
-        "URL": "https://leetcode.com/problems/add-strings/"
-      },
-      {
-        "Problem": "Longest Common Prefix",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Easy",
-        "URL": "https://leetcode.com/problems/longest-common-prefix/"
-      },
-      {
-        "Problem": "Valid Palindrome Ii",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Easy",
-        "URL": "https://leetcode.com/problems/valid-palindrome-ii/"
-      },
-      {
-        "Problem": "Roman To Integer",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Easy",
-        "URL": "https://leetcode.com/problems/roman-to-integer/"
-      },
-      {
-        "Problem": "Implement Strstr",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Easy",
-        "URL": "https://leetcode.com/problems/implement-strstr/"
-      },
-      {
-        "Problem": "Longest Substring Without Repeating Characters",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-      },
-      {
-        "Problem": "Minimum Remove To Make Valid Parentheses",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/"
-      },
-      {
-        "Problem": "Longest Palindromic Substring",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/longest-palindromic-substring/"
-      },
-      {
-        "Problem": "Group Anagrams",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/group-anagrams/"
-      },
-      {
-        "Problem": "Generate Parentheses",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/generate-parentheses/"
-      },
-      {
-        "Problem": "Basic Calculator Ii",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/basic-calculator-ii/"
-      },
-      {
-        "Problem": "Integer To Roman",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/integer-to-roman/"
-      },
-      {
-        "Problem": "Reverse Words In A String",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/reverse-words-in-a-string/"
-      },
-      {
-        "Problem": "Simplify Path",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/simplify-path/"
-      },
-      {
-        "Problem": "Zigzag Conversion",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Medium",
-        "URL": "https://leetcode.com/problems/zigzag-conversion/"
-      },
-      {
-        "Problem": "Text Justification",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/text-justification/"
-      },
-      {
-        "Problem": "Integer To English Words",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/integer-to-english-words/"
-      },
-      {
-        "Problem": "Minimum Window Substring",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/minimum-window-substring/"
-      },
-      {
-        "Problem": "Valid Number",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/valid-number/"
-      },
-      {
-        "Problem": "Distinct Subsequences",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/distinct-subsequences/"
-      },
-      {
-        "Problem": "Smallest Range Covering Elements From K Lists",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/"
-      },
-      {
-        "Problem": "Substring With Concatenation Of All Words",
-        "Done": false,
-        "Bookmark": false,
-        "Notes": "",
-        "Difficulty": "Hard",
-        "URL": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/"
-      }
-    ]
-      ,
-    "topicName": "MATHS",
+      "topicName": "Strings",
+      "position": 0,
+      "started": false,
+      "doneQuestions": 0,
+      "questions": [
+        {
+          "Problem": "Add Strings",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Easy",
+          "URL": "https://leetcode.com/problems/add-strings/"
+        },
+        {
+          "Problem": "Longest Common Prefix",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Easy",
+          "URL": "https://leetcode.com/problems/longest-common-prefix/"
+        },
+        {
+          "Problem": "Valid Palindrome Ii",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Easy",
+          "URL": "https://leetcode.com/problems/valid-palindrome-ii/"
+        },
+        {
+          "Problem": "Roman To Integer",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Easy",
+          "URL": "https://leetcode.com/problems/roman-to-integer/"
+        },
+        {
+          "Problem": "Implement Strstr",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Easy",
+          "URL": "https://leetcode.com/problems/implement-strstr/"
+        },
+        {
+          "Problem": "Longest Substring Without Repeating Characters",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+        },
+        {
+          "Problem": "Minimum Remove To Make Valid Parentheses",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/"
+        },
+        {
+          "Problem": "Longest Palindromic Substring",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/longest-palindromic-substring/"
+        },
+        {
+          "Problem": "Group Anagrams",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/group-anagrams/"
+        },
+        {
+          "Problem": "Generate Parentheses",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/generate-parentheses/"
+        },
+        {
+          "Problem": "Basic Calculator Ii",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/basic-calculator-ii/"
+        },
+        {
+          "Problem": "Integer To Roman",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/integer-to-roman/"
+        },
+        {
+          "Problem": "Reverse Words In A String",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/reverse-words-in-a-string/"
+        },
+        {
+          "Problem": "Simplify Path",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/simplify-path/"
+        },
+        {
+          "Problem": "Zigzag Conversion",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Medium",
+          "URL": "https://leetcode.com/problems/zigzag-conversion/"
+        },
+        {
+          "Problem": "Text Justification",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/text-justification/"
+        },
+        {
+          "Problem": "Integer To English Words",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/integer-to-english-words/"
+        },
+        {
+          "Problem": "Minimum Window Substring",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/minimum-window-substring/"
+        },
+        {
+          "Problem": "Valid Number",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/valid-number/"
+        },
+        {
+          "Problem": "Distinct Subsequences",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/distinct-subsequences/"
+        },
+        {
+          "Problem": "Smallest Range Covering Elements From K Lists",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/"
+        },
+        {
+          "Problem": "Substring With Concatenation Of All Words",
+          "Done": false,
+          "Bookmark": false,
+          "Notes": "",
+          "Difficulty": "Hard",
+          "URL": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/"
+        }
+      ]}
+      ,{
+    "topicName": "Maths",
     "position": 0,
     "started": false,
     "doneQuestions": 0,
@@ -841,7 +843,7 @@ export default [
         "Difficulty": "Hard",
         "URL": "https://leetcode.com/problems/number-of-digit-one/"
       }
-    ],
+    ]},{
     "topicName": "Greedy",
     "position": 0,
     "started": false,
@@ -935,7 +937,7 @@ export default [
         "Difficulty": "Hard",
         "URL": "https://leetcode.com/problems/create-maximum-number/"
       }
-    ],
+    ]},{
     "topicName": "DFS",
     "position": 0,
     "started": false,
@@ -1077,7 +1079,7 @@ export default [
         "Difficulty": "Hard",
         "URL": "https://leetcode.com/problems/remove-boxes/"
       }
-    ],
+    ]},{
     "topicName": "Tree",
     "position": 0,
     "started": false,
@@ -1411,7 +1413,7 @@ export default [
         "Difficulty": "Hard",
         "URL": "https://leetcode.com/problems/redundant-connection-ii/"
       }
-    ],
+    ]},{
     "topicName": "Hash Table",
     "position": 0,
     "started": false,
@@ -1449,7 +1451,7 @@ export default [
         "Difficulty": "Medium",
         "URL": "https://leetcode.com/problems/design-twitter/"
       }
-    ],  
+    ]},{
         "topicName": "Binary Search",
         "position": 0,
         "started": false,
@@ -1676,8 +1678,8 @@ export default [
             "Difficulty": "Hard",
             "URL": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/"
           }
-        ]
-      ,
+        ]}
+      ,{
       
         "topicName": "Two Pointer",
         "position": 0,
@@ -1724,7 +1726,7 @@ export default [
             "Difficulty": "Medium / Hard",
             "URL": "https://leetcode.com/problems/subarrays-with-k-different-integers/"
           }
-        ],
+        ]},{
         "topicName": "STACK",
         "position": 0,
         "started": false,
@@ -1827,7 +1829,7 @@ export default [
             "URL": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
           }
         ]
-      ,
+      },{
         "topicName": "DESIGN",
         "position": 0,
         "started": false,
@@ -1890,7 +1892,7 @@ export default [
             "URL": "https://leetcode.com/problems/design-browser-history/"
           }
         ]
-     ,
+     },{
         "topicName": "GRAPH",
         "position": 0,
         "started": false,
@@ -2041,7 +2043,7 @@ export default [
             "URL": "https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently"
           }
         ]
-     ,
+      },{
         "topicName": "LINKED LIST",
         "position": 0,
         "started": false,
@@ -2334,7 +2336,7 @@ export default [
             "URL": "https://leetcode.com/problems/k-th-smallest-prime-fraction/"
           }
         ]
-      },
+      },  
       {
         "topicName": "SLIDING WINDOW",
         "position": 0,
@@ -2406,7 +2408,6 @@ export default [
             "URL": "https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/"
           }
         ]
-
     }
   ]
   

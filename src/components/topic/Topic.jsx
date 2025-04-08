@@ -1,62 +1,90 @@
 import React, { useState, useEffect } from 'react';
-import TopicCard from '../topiccard/TopicCard';
-import sheet from '../../sheets/Arsh.js';
+import { useNavigate } from 'react-router-dom';
+import './Topic.css';
+import TopicCard from './TopicCard';
 
-const Topic = () => {
-  const [topics, setTopics] = useState({});
+function Topic({ selectedSheet }) {
+  const [topics, setTopics] = useState([]);
+  const [solvedProblems, setSolvedProblems] = useState({});
+  const [title, setTitle] = useState('Love Babar');
+  const navigate = useNavigate();
 
-  // Initialize topics with data from sheet and localStorage
   useEffect(() => {
-    const initialTopics = sheet.reduce((acc, topic) => {
-      const topicName = topic.topicName;
-      const saved = localStorage.getItem(`solved-${topicName}`);
-      const solvedQuestions = saved ? JSON.parse(saved) : [];
-      
-      acc[topicName] = {
-        name: topicName,
-        totalProblems: topic.questions.length,
-        solvedProblems: solvedQuestions.length
-      };
-      return acc;
-    }, {});
-    setTopics(initialTopics);
+    // Load saved progress from localStorage
+    const savedProgress = localStorage.getItem('solvedProblems');
+    if (savedProgress) {
+      setSolvedProblems(JSON.parse(savedProgress));
+    }
   }, []);
 
-  // Listen for question progress updates
   useEffect(() => {
-    const handleQuestionProgress = (event) => {
-      const { topicName, solvedCount, totalQuestions } = event.detail;
-      setTopics(prevTopics => ({
-        ...prevTopics,
-        [topicName]: {
-          ...prevTopics[topicName],
-          solvedProblems: solvedCount,
-          totalProblems: totalQuestions
+    // Load sheet data based on selectedSheet
+    const loadSheetData = async () => {
+      try {
+        let sheetData;
+        switch (selectedSheet) {
+          case 'sheet3':
+            const dsaFinal = await import('../../sheets/450DSAFinal');
+            sheetData = dsaFinal.default;
+            setTitle('Love Babar');
+            break;
+          case 'sheet1':
+            const arsh = await import('../../sheets/Arsh');
+            sheetData = arsh.default;
+            setTitle('Arsh');
+            break;
+          case 'sheet2':
+            const fraz = await import('../../sheets/Fraz');
+            sheetData = fraz.default;
+            setTitle('Fraz');
+            break;
+          default:
+            const defaultSheet = await import('../../sheets/450DSAFinal');
+            sheetData = defaultSheet.default;
         }
-      }));
+        
+        // Ensure sheetData is an array
+        if (Array.isArray(sheetData)) {
+          setTopics(sheetData);
+        } else {
+          console.error('Sheet data is not in the expected format:', sheetData);
+          setTopics([]);
+        }
+      } catch (error) {
+        console.error('Error loading sheet data:', error);
+        setTopics([]);
+      }
     };
 
-    window.addEventListener('questionProgress', handleQuestionProgress);
-    return () => window.removeEventListener('questionProgress', handleQuestionProgress);
-  }, []);
+    loadSheetData();
+  }, [selectedSheet]);
+
+  const handleTopicClick = (topicName) => {
+    navigate(`/questions/${encodeURIComponent(topicName)}`, {
+      state: { selectedSheet }
+    });
+  };
+
+  const getSolvedCount = (topicName) => {
+    return solvedProblems[topicName]?.length || 0;
+  };
 
   return (
-    <div className="container section">
-      <h1 className="section__title">DSA Cracker</h1>
-      <p className="section__subtitle">Your DSA Learning Journey Starts Here</p>
-      
-      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
-        {Object.values(topics).map((topic) => (
+    <div className="topic-container">
+      <h1 className="topic-title">{title} Sheet</h1>
+      <div className="topic-grid">
+        {topics.map((topic) => (
           <TopicCard
-            key={topic.name}
-            topic={topic.name}
-            totalProblems={topic.totalProblems}
-            solvedProblems={topic.solvedProblems}
+            key={topic.topicName}
+            topicName={topic.topicName}
+            totalQuestions={topic.questions?.length || 0}
+            solvedQuestions={getSolvedCount(topic.topicName)}
+            onClick={() => handleTopicClick(topic.topicName)}
           />
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default Topic;
