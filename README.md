@@ -2,6 +2,11 @@
 
 A modern web application to help you track and solve Data Structures and Algorithms (DSA) problems efficiently. Built with React and designed to provide a seamless learning experience.
 
+## Application Preview
+
+![DSA Cracker Preview](./src/assets/Sample.png)
+
+
 ## Features
 
 - 📚 **Comprehensive DSA Topics**: Covers essential DSA topics including Arrays, Strings, Linked Lists, Trees, and more
@@ -11,6 +16,23 @@ A modern web application to help you track and solve Data Structures and Algorit
 - 🔗 **Multiple Resources**: Access problems from various platforms (LeetCode, GeeksforGeeks, Coding Ninjas)
 - 📊 **Visual Progress**: See your completion status with intuitive progress bars
 - 💾 **Local Storage**: Your progress is saved locally and persists between sessions
+
+## Available Topics
+
+The application currently covers the following DSA topics:
+
+- **Array**: 43 Problems
+- **Recursion**: 17 Problems
+- **Strings**: 22 Problems
+- **Maths**: 20 Problems
+- **Greedy**: 11 Problems
+- **DFS**: 17 Problems
+- **Tree**: 41 Problems
+- **Hash Table**: 4 Problems
+- **BFS**: 9 Problems
+- **Two Pointer**: 5 Problems
+- **Stack**: 12 Problems
+- **Design**: 7 Problems
 
 ## Tech Stack
 
