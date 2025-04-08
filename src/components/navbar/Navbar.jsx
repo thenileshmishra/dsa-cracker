@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Select } from 'antd';
 import './Navbar.css';
 
 function Navbar({ selectedSheet, onSheetChange, isDarkMode, toggleDarkMode }) {
+  const { Option } = Select;
+
   return (
     <nav className="navbar">
       <div className="navbar__container">
@@ -12,15 +15,16 @@ function Navbar({ selectedSheet, onSheetChange, isDarkMode, toggleDarkMode }) {
         
         <div className="navbar__right">
           <div className="navbar__sheet-selector">
-            <select 
-              value={selectedSheet} 
-              onChange={(e) => onSheetChange(e.target.value)}
+            <Select
+              value={selectedSheet}
+              onChange={onSheetChange}
               className="navbar__select"
+              dropdownClassName="navbar__select-dropdown"
             >
-              <option value="sheet3">Love Babar</option>
-              <option value="sheet1">Arsh </option>
-              <option value="sheet2">Fraz </option>
-            </select>
+              <Option value="sheet3">Love Babar</Option>
+              <Option value="sheet1">Arsh</Option>
+              <Option value="sheet2">Fraz</Option>
+            </Select>
           </div>
           
           <button 
