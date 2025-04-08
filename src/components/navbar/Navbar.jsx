@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Select } from 'antd';
 import './Navbar.css';
@@ -9,6 +9,22 @@ function Navbar({ selectedSheet, onSheetChange, isDarkMode, toggleDarkMode }) {
   
   // Check if we're on the questions page
   const isQuestionsPage = location.pathname.includes('/questions/');
+
+  // Load saved sheet from localStorage on component mount
+  useEffect(() => {
+    const savedSheet = localStorage.getItem('selectedSheet');
+    if (savedSheet && onSheetChange) {
+      onSheetChange(savedSheet);
+    }
+  }, [onSheetChange]);
+
+  // Handle sheet change and save to localStorage
+  const handleSheetChange = (value) => {
+    if (onSheetChange) {
+      onSheetChange(value);
+      localStorage.setItem('selectedSheet', value);
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -22,7 +38,7 @@ function Navbar({ selectedSheet, onSheetChange, isDarkMode, toggleDarkMode }) {
             <div className="navbar__sheet-selector">
               <Select
                 value={selectedSheet}
-                onChange={onSheetChange}
+                onChange={handleSheetChange}
                 className="navbar__select"
                 dropdownClassName="navbar__select-dropdown"
               >
