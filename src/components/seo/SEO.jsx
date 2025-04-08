@@ -5,7 +5,7 @@ function SEO({
   title = 'DSA Cracker - Practice DSA Questions',
   description = 'Practice DSA questions from popular sheets like Love Babbar 450, Arsh Goyal, and Fraz. Track your progress and improve your coding skills.',
   keywords = 'DSA, Data Structures, Algorithms, Coding, Programming, Love Babbar, Arsh Goyal, Fraz, LeetCode, GeeksforGeeks',
-  image = '/logo.png',
+  image = '/data-structure.png',
   url = window.location.href,
   type = 'website'
 }) {
@@ -32,8 +32,8 @@ function SEO({
       <meta name="twitter:image" content={image} />
 
       {/* Favicon */}
-      <link rel="icon" type="image/png" href="/favicon.png" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" href="/data-structure.png" />
+      <link rel="apple-touch-icon" href="/data-structure.png" />
 
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
