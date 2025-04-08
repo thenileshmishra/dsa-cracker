@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Progress } from 'antd';
 import './Topic.css';
 import TopicCard from './TopicCard';
 
@@ -11,10 +12,27 @@ function Topic({ selectedSheet }) {
 
   useEffect(() => {
     // Load saved progress from localStorage
-    const savedProgress = localStorage.getItem('solvedProblems');
-    if (savedProgress) {
-      setSolvedProblems(JSON.parse(savedProgress));
-    }
+    const loadSolvedProblems = () => {
+      const savedProgress = {};
+      // Scan all localStorage keys
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('solved-')) {
+          try {
+            const topicName = key.replace('solved-', '');
+            const solvedData = JSON.parse(localStorage.getItem(key));
+            if (Array.isArray(solvedData)) {
+              savedProgress[topicName] = solvedData;
+            }
+          } catch (error) {
+            console.error('Error parsing solved problems:', error);
+          }
+        }
+      }
+      setSolvedProblems(savedProgress);
+    };
+
+    loadSolvedProblems();
   }, []);
 
   useEffect(() => {
@@ -43,7 +61,6 @@ function Topic({ selectedSheet }) {
             sheetData = defaultSheet.default;
         }
         
-        // Ensure sheetData is an array
         if (Array.isArray(sheetData)) {
           setTopics(sheetData);
         } else {
@@ -66,7 +83,18 @@ function Topic({ selectedSheet }) {
   };
 
   const getSolvedCount = (topicName) => {
-    return solvedProblems[topicName]?.length || 0;
+    // Get the solved problems for this topic from localStorage directly
+    const key = `solved-${topicName}`;
+    try {
+      const solvedData = localStorage.getItem(key);
+      if (solvedData) {
+        const solved = JSON.parse(solvedData);
+        return Array.isArray(solved) ? solved.length : 0;
+      }
+    } catch (error) {
+      console.error('Error getting solved count:', error);
+    }
+    return 0;
   };
 
   return (
