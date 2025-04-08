@@ -49,6 +49,7 @@
 }
 
 .navbar__select .ant-select-selector {
+  background: var(--body-color) !important;
   border: none !important;
   padding: 0 1rem !important;
 }
@@ -142,4 +143,15 @@
 
 .dark-mode .navbar__darkmode:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar__right {
+    gap: 0.5rem;
+  }
+  
+  .progress-bar {
+    display: none;
+  }
 }
