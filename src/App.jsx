@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/navbar/Navbar';
 import Topic from './components/topic/Topic';
 import Questions from './components/questions/Questions';
+import SEO from './components/seo/SEO';
 import './App.css';
 
 function App() {
@@ -34,28 +36,31 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="app">
-        <Navbar 
-          selectedSheet={selectedSheet}
-          onSheetChange={handleSheetChange}
-          isDarkMode={isDarkMode}
-          toggleDarkMode={toggleDarkMode}
-        />
-        <main className="main">
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Topic selectedSheet={selectedSheet} />} 
-            />
-            <Route 
-              path="/questions/:topicName" 
-              element={<Questions selectedSheet={selectedSheet} />} 
-            />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="app">
+          <SEO />
+          <Navbar 
+            selectedSheet={selectedSheet}
+            onSheetChange={handleSheetChange}
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
+          />
+          <main className="main">
+            <Routes>
+              <Route 
+                path="/" 
+                element={<Topic selectedSheet={selectedSheet} />} 
+              />
+              <Route 
+                path="/questions/:topicName" 
+                element={<Questions selectedSheet={selectedSheet} />} 
+              />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

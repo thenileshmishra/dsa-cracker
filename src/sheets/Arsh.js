@@ -1,6 +1,6 @@
 export default [
     {
-      topicName: "Arrays  ARSH",
+      topicName: "Arrays",
       position: 0,
       started: false,
       doneQuestions: 0,
