@@ -37,7 +37,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <Router>
+      <Router basename="/dsa-cracker">
         <div className="app">
           <SEO />
           <Navbar 
