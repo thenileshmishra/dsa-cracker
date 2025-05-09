@@ -52,6 +52,7 @@
   background: var(--body-color) !important;
   border: none !important;
   padding: 0 1rem !important;
+  color: var(--text-color) !important;
 }
 
 .navbar__select .ant-select-selection-item {
@@ -72,10 +73,14 @@
 
 .navbar__select-dropdown .ant-select-item-option-selected {
   background: var(--container-color) !important;
-  color: var(--first-color) !important;
+  color: var(--title-color) !important;
 }
 
-.navbar__select-dropdown .ant-select-item-option:hover {
+.navbar__select-dropdown .ant-select-item-option-active {
+  background: var(--container-color) !important;
+}
+
+.navbar__select-dropdown .ant-select-item:hover {
   background: var(--container-color) !important;
 }
 
@@ -106,39 +111,39 @@
 }
 
 .dark-mode .navbar__select {
-  background: var(--body-color-dark) !important;
-  border-color: var(--border-color-dark) !important;
-  color: var(--text-color-dark) !important;
+  background: var(--body-color-dark-mode) !important;
+  border-color: var(--border-color) !important;
 }
 
 .dark-mode .navbar__select .ant-select-selector {
-  background: var(--body-color-dark) !important;
+  background: var(--body-color-dark-mode) !important;
+  color: var(--text-color-dark-mode) !important;
 }
 
 .dark-mode .navbar__select .ant-select-selection-item {
-  color: var(--text-color-dark) !important;
+  color: var(--text-color-dark-mode) !important;
 }
 
 .dark-mode .navbar__select-dropdown {
-  background: var(--body-color-dark) !important;
-  border-color: var(--border-color-dark) !important;
+  background: var(--body-color-dark-mode) !important;
+  border-color: var(--border-color) !important;
 }
 
 .dark-mode .navbar__select-dropdown .ant-select-item {
-  color: #fff !important;
+  color: var(--text-color-dark-mode) !important;
 }
 
 .dark-mode .navbar__select-dropdown .ant-select-item-option-selected {
-  background: var(--container-color-dark) !important;
-  color: var(--first-color) !important;
+  background: var(--container-color-dark-mode) !important;
+  color: var(--title-color-dark-mode) !important;
 }
 
 .dark-mode .navbar__select-dropdown .ant-select-item-option-active {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: var(--container-color-dark-mode) !important;
 }
 
 .dark-mode .navbar__select-dropdown .ant-select-item:hover {
-  color: var(--first-color) !important;
+  background: var(--container-color-dark-mode) !important;
 }
 
 .dark-mode .navbar__darkmode:hover {

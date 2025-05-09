@@ -123,9 +123,19 @@ function Topic({ selectedSheet }) {
         <Progress 
           percent={progress.percentage} 
           showInfo
-          style={{width: '95%'}}
+          style={{
+            width: '95%',
+            '--ant-progress-text-color': 'var(--text-color)',
+            '--ant-progress-remaining-color': 'var(--border-color)',
+            '--ant-progress-text-font-size': '14px',
+            '--ant-progress-text-font-weight': '500'
+          }}
           strokeWidth={20}
-          strokeColor="#B0B0B0" 
+          strokeColor={{
+            '0%': 'var(--title-color)',
+            '100%': 'var(--title-color-dark)'
+          }}
+          trailColor="var(--border-color)"
           strokeLinecap="butt"
           format={() => `${progress.solved} / ${progress.total}`} 
           percentPosition={{ align: 'center', type: 'inner' }} 
