@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 function SEO({ 
-  title = 'DSA Cracker - Practice DSA Questions',
+  title = 'PrepDSA - Practice DSA Questions',
   description = 'Practice DSA questions from popular sheets like Love Babbar 450, Arsh Goyal, and Fraz. Track your progress and improve your coding skills.',
   keywords = 'DSA, Data Structures, Algorithms, Coding, Programming, Love Babbar, Arsh Goyal, Fraz, LeetCode, GeeksforGeeks',
   image = '/data-structure.png',
@@ -11,11 +11,10 @@ function SEO({
 }) {
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="DSA Cracker" />
+      <meta name="author" content="PrepDSA" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       {/* Open Graph Meta Tags */}

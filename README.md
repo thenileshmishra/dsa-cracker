@@ -1,10 +1,10 @@
-# DSA Cracker
+# PrepDSA
 
 A modern web application to help you track and solve Data Structures and Algorithms (DSA) problems efficiently. Built with React and designed to provide a seamless learning experience.
 
 ## Application Preview
 
-![DSA Cracker Preview](./src/assets/Sample.png)
+![PrepDSA Preview](./src/assets/Sample.png)
 
 
 ## Features

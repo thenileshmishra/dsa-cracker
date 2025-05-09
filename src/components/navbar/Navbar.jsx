@@ -30,7 +30,7 @@ function Navbar({ selectedSheet, onSheetChange, isDarkMode, toggleDarkMode }) {
     <nav className="navbar">
       <div className="navbar__container">
         <Link to="/" className="navbar__logo">
-          DSA CRACKER
+          PrepDSA
         </Link>
         
         <div className="navbar__right">

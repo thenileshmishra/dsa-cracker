@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Progress } from 'antd';
+import { Flex, Progress } from 'antd';
 import './Topic.css';
 import TopicCard from './TopicCard';
 
@@ -97,9 +97,42 @@ function Topic({ selectedSheet }) {
     return 0;
   };
 
+  const getTotalProgress = () => {
+    let totalSolved = 0;
+    let totalQuestions = 0;
+    
+    topics.forEach(topic => {
+      totalSolved += getSolvedCount(topic.topicName);
+      totalQuestions += topic.questions?.length || 0;
+    });
+
+    const percentage = totalQuestions > 0 ? Math.round((totalSolved / totalQuestions) * 100) : 0;
+    return {
+      percentage,
+      solved: totalSolved,
+      total: totalQuestions
+    };
+  };
+
+  const progress = getTotalProgress();
+
   return (
     <div className="topic-container">
       <h1 className="topic-title">{title} Sheet</h1>
+      <Flex gap="small" vertical style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+        <Progress 
+          percent={progress.percentage} 
+          showInfo
+          style={{width: '95%'}}
+          strokeWidth={20}
+          strokeColor="#B0B0B0" 
+          strokeLinecap="butt"
+          format={() => `${progress.solved} / ${progress.total}`} 
+          percentPosition={{ align: 'center', type: 'inner' }} 
+        />
+      </Flex>
+      
+
       <div className="topic-grid">
         {topics.map((topic) => (
           <TopicCard
